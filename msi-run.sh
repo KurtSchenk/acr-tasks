@@ -61,7 +61,8 @@ create_acr_task()
 # assign_roles_key_vault
 # create_acr_task
 # az keyvault secret set --vault-name $kv -n $secret_name --value $secret_value
-az acr task run -n msitask -r $registry --set registryName=$registry
+# az acr task show -n msitask -r $registry
+az acr task run -n msitask -r $registry --set registryName=$registry --verbose --debug 2>&1 #--debug
 # az acr task logs --registry $registry -n msitask
 
 exit
